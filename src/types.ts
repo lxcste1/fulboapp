@@ -5,3 +5,9 @@ export interface Match {
   goals1: number;
   goals2: number;
 }
+
+export interface Player {
+  name: string;
+  matches: number;
+  score: number;
+}
