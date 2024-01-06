@@ -23,6 +23,7 @@ module.exports = {
     },
   },
   rules: {
+    "react/no-array-index-key": "off",
     "@typescript-eslint/no-misused-promises": "off",
     "prettier/prettier": [
       "warn",

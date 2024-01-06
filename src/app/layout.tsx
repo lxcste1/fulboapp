@@ -26,7 +26,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                 <Link href="/players">Jugadores</Link>
               </li>
               <li>
-                <Link href="/armador">Armador de equipos</Link>
+                <Link href="/builder">Armador de equipos</Link>
               </li>
             </ul>
           </nav>
