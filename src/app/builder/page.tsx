@@ -17,7 +17,7 @@ export default async function BuilderPage() {
       searchParams.append("players", player as string);
     }
 
-    redirect(`/armador/partido?${searchParams.toString()}`);
+    redirect(`/builder/match?${searchParams.toString()}`);
   }
 
   return <BuilderPageClient players={players} onCreate={createTeams} />;
