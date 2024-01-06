@@ -6,6 +6,7 @@ const api = {
     list: async (): Promise<Match[]> => {
       return fetch(
         "https://docs.google.com/spreadsheets/d/e/2PACX-1vRbViefWt72MuVe9fs3ZJ_ursK6d21dYi064a_nPqXypz60Qxym9EhY_Jj-91XwO7dc7tyHoJLlJuVY/pub?output=tsv",
+        {next: {tags: ["matches"]}},
       )
         .then((res) => res.text())
         .then((text) => {
