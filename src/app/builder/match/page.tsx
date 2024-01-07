@@ -39,7 +39,7 @@ export default async function MatchPage({
   }
 
   return (
-    <Table>
+    <Table className="m-auto max-w-md">
       <TableHeader>
         <TableRow>
           <TableHead>City Titular</TableHead>
