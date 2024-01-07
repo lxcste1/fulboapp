@@ -1,5 +1,6 @@
 import type {Match} from "./types";
 import type {Player} from "./types";
+import type {Scorer} from "./types";
 
 const api = {
   match: {
@@ -27,7 +28,28 @@ const api = {
         });
     },
   },
+  scorers: {
+    list: async (): Promise<Scorer[]> => {
+      return fetch(
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vRbViefWt72MuVe9fs3ZJ_ursK6d21dYi064a_nPqXypz60Qxym9EhY_Jj-91XwO7dc7tyHoJLlJuVY/pub?gid=1892760755&single=true&output=tsv",
+        {next: {tags: ["scorers"]}},
+      )
+        .then((res) => res.text())
+        .then((text) => {
+          return text
+            .split("\n")
+            .slice(1)
+            .map((row) => {
+              const [player, goals] = row.split("\t");
 
+              return {
+                player,
+                goals: parseInt(goals),
+              };
+            });
+        });
+    },
+  },
   player: {
     list: async (): Promise<Player[]> => {
       const matches = await api.match.list();

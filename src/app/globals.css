@@ -74,3 +74,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+.main-banner{
+  background-image: url("/fulboapp_main-banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

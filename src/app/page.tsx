@@ -1,36 +1,31 @@
-import api from "@/api";
-import {cn} from "@/lib/utils";
-import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
+import Matches from "@/components/matches";
+import Scorers from "@/components/scorers";
 
 export default async function Home() {
-  const matches = await api.match.list();
-
   return (
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead className="w-[100px]">Fecha</TableHead>
-          <TableHead>City Titular</TableHead>
-          <TableHead>City Suplente</TableHead>
-          <TableHead>Goles City Titular</TableHead>
-          <TableHead className="text-right">Goles City Suplente</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {matches.map(({date, goals1, goals2, team1, team2}) => (
-          <TableRow key={date}>
-            <TableCell>{date}</TableCell>
-            <TableCell>{team1}</TableCell>
-            <TableCell>{team2}</TableCell>
-            <TableCell className={cn({"font-bold text-green-500": goals1 > goals2})}>
-              {goals1}
-            </TableCell>
-            <TableCell className={cn("text-right", {"font-bold text-green-500": goals2 > goals1})}>
-              {goals2}
-            </TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+    <>
+      <div className="main-banner mb-10 flex w-full flex-col flex-wrap justify-center rounded-md py-40 text-center md:mb-20">
+        <h1 className="pb-4 text-6xl font-bold">¡Bienvenidos!</h1>
+        <h3 className="pb-4 text-xl font-bold">
+          Al armador de equipos para los Domingos de fútbol
+        </h3>
+        <p>
+          También vas a poder encontrar los resultados de los últimos partidos, y los goleadores de
+          la temporada.
+        </p>
+      </div>
+      <div className="flex flex-wrap justify-between">
+        <div className="w-full md:w-3/4">
+          <h1 className="mb-10 text-center text-xl font-bold">últimos partidos</h1>
+          <Matches />
+        </div>
+        <div className="w-full md:w-1/4">
+          <h1 className="mb-10 text-center text-xl font-bold">Goleadores</h1>
+          <div>
+            <Scorers />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

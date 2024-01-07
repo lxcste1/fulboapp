@@ -11,3 +11,8 @@ export interface Player {
   matches: number;
   score: number;
 }
+
+export interface Scorer {
+  player: string;
+  goals: number;
+}
