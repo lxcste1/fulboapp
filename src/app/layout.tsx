@@ -13,7 +13,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 
   useEffect(() => {
     screenSize;
-  });
+  }, [screenSize]);
 
   return (
     <html lang="en">
