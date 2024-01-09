@@ -1,5 +1,5 @@
 "use client";
-
+import {useEffect} from "react";
 import Link from "next/link";
 
 import {Drawer, DrawerContent, DrawerFooter, DrawerTrigger} from "@/components/ui/drawer";
@@ -10,6 +10,10 @@ import "./globals.css";
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   const screenSize = useScreenSize();
+
+  useEffect(() => {
+    screenSize;
+  });
 
   return (
     <html lang="en">
