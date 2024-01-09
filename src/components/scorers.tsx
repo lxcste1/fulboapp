@@ -4,6 +4,10 @@ import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/c
 export default async function Scorers() {
   const scorers = await api.scorers.list();
 
+  const sortScorers = [...scorers];
+
+  sortScorers.sort((a, b) => b.goals - a.goals);
+
   return (
     <div className="overflow-x">
       <Table className="m-auto max-w-4xl table-auto overflow-scroll">
@@ -14,7 +18,7 @@ export default async function Scorers() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {scorers.map(({player, goals}) => (
+          {sortScorers.map(({player, goals}) => (
             <TableRow key={player}>
               <TableCell>{player}</TableCell>
               <TableCell className="text-right">{goals}</TableCell>

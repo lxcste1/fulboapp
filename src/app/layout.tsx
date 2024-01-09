@@ -1,27 +1,15 @@
 "use client";
 
-import {useState, useEffect} from "react";
 import Link from "next/link";
 
 import {Drawer, DrawerContent, DrawerFooter, DrawerTrigger} from "@/components/ui/drawer";
 
+import useScreenSize from "./hooks/useScreenSize";
+
 import "./globals.css";
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
-  const [width, setWidth] = useState<number>(0);
-
-  function handleWindowSizeChange() {
-    setWidth(window.innerWidth);
-  }
-  useEffect(() => {
-    window.addEventListener("resize", handleWindowSizeChange);
-
-    return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
-    };
-  }, []);
-
-  const isMobile = width <= 768;
+  const screenSize = useScreenSize();
 
   return (
     <html lang="en">
@@ -30,7 +18,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
           <Link className="text-xl font-bold leading-[4rem]" href="/">
             Fulboapp
           </Link>
-          {isMobile ? (
+          {screenSize.width <= 767 ? (
             <Drawer>
               <DrawerTrigger>Open</DrawerTrigger>
               <DrawerContent>
