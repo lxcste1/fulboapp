@@ -1,7 +1,13 @@
+import type {Scorer} from "@/types";
+
 import Matches from "@/components/matches";
+// import Scorers from "@/components/scorers-old";
 import Scorers from "@/components/scorers";
+import api from "@/api";
 
 export default async function Home() {
+  const scorersData: Scorer[] = await api.scorers.list();
+
   return (
     <>
       <div className="main-banner mb-10 flex w-full flex-col flex-wrap justify-center rounded-md py-40 text-center md:mb-20">
@@ -22,7 +28,7 @@ export default async function Home() {
         <div className="w-full md:w-1/4">
           <h1 className="mb-10 text-center text-xl font-bold">Goleadores</h1>
           <div>
-            <Scorers />
+            <Scorers initialScorers={scorersData} />
           </div>
         </div>
       </div>

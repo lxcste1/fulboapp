@@ -57,7 +57,9 @@ export default function BuilderPageClient({
             ))}
           </TableBody>
         </Table>
-        <Button type="submit">Armar equipos</Button>
+        <Button className="w-full" type="submit">
+          Armar equipos
+        </Button>
       </form>
     </section>
   );

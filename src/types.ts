@@ -16,3 +16,7 @@ export interface Scorer {
   player: string;
   goals: number;
 }
+
+export interface WindowSize {
+  width?: number;
+}
