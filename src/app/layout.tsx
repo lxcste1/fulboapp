@@ -10,7 +10,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 
   return (
     <html lang="en">
-      <body className="dark container m-auto grid min-h-screen grid-rows-[auto,1fr,auto] break-all bg-background px-4 font-sans antialiased">
+      <body className="dark container m-auto grid min-h-screen grid-rows-[auto,1fr,auto] overflow-x-hidden break-all bg-background px-0 font-sans antialiased">
         <Header />
         <main className="py-8">{children}</main>
         <footer className="text-center leading-[4rem] opacity-70">

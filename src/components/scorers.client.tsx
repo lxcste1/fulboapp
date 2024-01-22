@@ -33,7 +33,7 @@ function ScorersClient({initialScorers}: {initialScorers: Scorer[]}) {
     : sortScorers.filter((scorer) => scorer.goals >= 3);
 
   return (
-    <div className="overflow-x">
+    <div className="overflow-x px-2.5">
       <Table className="m-auto max-w-4xl table-auto overflow-scroll">
         <TableHeader>
           <TableRow>
