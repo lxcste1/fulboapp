@@ -10,12 +10,12 @@ export default async function Home() {
 
   return (
     <>
-      <div className="main-banner mb-10 flex w-full flex-col flex-wrap justify-center rounded-md py-40 text-center md:mb-20">
+      <div className="main-banner mb-10 flex w-full flex-col flex-wrap justify-center rounded-md px-2.5 py-40 text-center md:mb-20">
         <h1 className="pb-4 text-5xl font-bold md:text-6xl">¡Bienvenidos!</h1>
-        <h3 className="pb-4 text-sm font-bold md:text-xl">
+        <h3 className="break-normal pb-4 text-sm font-bold md:text-xl">
           Al armador de equipos para los Domingos de fútbol
         </h3>
-        <p className="text-xs md:text-sm">
+        <p className="break-normal text-xs md:text-sm">
           También vas a poder encontrar los resultados de los últimos partidos, y los goleadores de
           la temporada.
         </p>

@@ -7,7 +7,7 @@ export default async function Matches() {
 
   return (
     <div className="overflow-x">
-      <Table className="m-auto table-auto overflow-scroll">
+      <Table className="m-auto table-auto overflow-scroll break-normal">
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">Fecha</TableHead>
