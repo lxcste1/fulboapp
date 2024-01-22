@@ -17,11 +17,8 @@ export default function Header() {
           </DrawerTrigger>
           <DrawerContent>
             <DrawerFooter className="px-8">
-              <Link className="opacity-70" href="/">
+              <Link className="opacity-70" href="/matches">
                 Partidos
-              </Link>
-              <Link className="opacity-70" href="/players">
-                Jugadores
               </Link>
               <Link className="opacity-70" href="/builder">
                 Armador de equipos
@@ -34,10 +31,7 @@ export default function Header() {
         <nav className="hidden md:block">
           <ul className="flex gap-4 opacity-70">
             <li>
-              <Link href="/">Partidos</Link>
-            </li>
-            <li>
-              <Link href="/players">Jugadores</Link>
+              <Link href="/matches">Partidos</Link>
             </li>
             <li>
               <Link href="/builder">Armador de equipos</Link>
