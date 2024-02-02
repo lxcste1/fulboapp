@@ -32,14 +32,14 @@ export default function BuilderPageClient({
 
   return (
     <section>
-      <form className="flex gap-4" onSubmit={handleAddPlayer}>
+      <form className="m-auto flex max-w-80 gap-4 md:max-w-5xl" onSubmit={handleAddPlayer}>
         <Input name="player" placeholder="Nombre del jugador" />
         <Button type="submit" variant="secondary">
           Agregar jugador
         </Button>
       </form>
-      <form action={onCreate}>
-        <Table>
+      <form action={onCreate} className="flex flex-wrap">
+        <Table className="m-auto max-w-80 md:max-w-5xl">
           <TableHeader>
             <TableRow>
               <TableHead>Nombre</TableHead>
@@ -51,13 +51,13 @@ export default function BuilderPageClient({
               <TableRow key={name}>
                 <TableCell>{name}</TableCell>
                 <TableCell className="text-right">
-                  <Checkbox name="player" value={name} />
+                  <Checkbox className="mr-4" name="player" value={name} />
                 </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
-        <Button className="w-full" type="submit">
+        <Button className="m-auto w-full max-w-80 md:max-w-5xl" type="submit">
           Armar equipos
         </Button>
       </form>
